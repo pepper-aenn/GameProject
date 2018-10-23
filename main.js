@@ -5,25 +5,25 @@ var ctx = canvas.getContext('2d')
 var width = canvas.width
 var height = canvas.height
 var bg = new Background(ctx, '/images/city2.png', 0.5)
-var penguin = new Player(ctx, '/images/pen2.png', 0.5 )
-var object1 = new Object(ctx, '/images/object1.png', 1)
-var object2 = new Object (ctx, '/images/obejct2.png', 2)
-var object3 = new Object (ctx, '/images/object3.png', 2.5)
-var makrele = new Fish (ctx,'/images/Makrele_seefrost_1.png',3)
+var penguin = new Player(ctx, '/images/New Project.png', 1 )
+var pigeon = new Object(ctx,'images/pigeon.png', 1.5)
+var trash = new Object2 (ctx, '/images/trash.png', 1.5)
+var bench = new Object3 (ctx, '/images/bench.png', 1)
+var makrele = new Fish (ctx,'/images/Makrele_seefrost_1.png', 2)
 var startButton;
 var playing = false;
 
 setInterval(function() {
  update()
  drawEverything()
-}, 1000/90)
+}, 1000/50)
 
 function update() {
   bg.update() 
   penguin.update()
-  object1.update()
-  object2.update()
-  object3.update()
+  pigeon.update()
+  trash.update()
+  bench.update()
   makrele.update()
 }
    
@@ -31,9 +31,9 @@ function drawEverything() {
   ctx.clearRect(0,0,width,height)
   bg.draw() 
   penguin.draw()
-  object1.draw()
-  object2.draw()
-  object3.draw()
+  pigeon.draw()
+  trash.draw()
+  bench.draw()
   makrele.draw()
 }
 

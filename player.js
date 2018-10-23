@@ -11,7 +11,7 @@ class Player {
     this.width = 115
     this.gravity = 1
     this.speedY = 0
-    this.minY = ctx.canvas.height - this.height - 47 
+    this.minY = ctx.canvas.height - this.height - 88 
     this.maxY = ctx.canvas.height          
   }
   update() {
@@ -20,8 +20,8 @@ class Player {
     if (this.y > this.minY) {
       this.y = this.minY
     }
-    if (this.y < 100){
-      this.y = 100;
+    if (this.y < 80){
+      this.y = 80;
     }
   }
   draw() {
