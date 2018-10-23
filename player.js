@@ -11,7 +11,8 @@ class Player {
     this.width = 115
     this.gravity = 1
     this.speedY = 0
-    this.minY = ctx.canvas.height - this.height - 47
+    this.minY = ctx.canvas.height - this.height - 47 
+    this.maxY = ctx.canvas.height          
   }
   update() {
     this.speedY += this.gravity
@@ -19,12 +20,15 @@ class Player {
     if (this.y > this.minY) {
       this.y = this.minY
     }
+    if (this.y < 100){
+      this.y = 100;
+    }
   }
   draw() {
-    this.ctx.drawImage(this.img,this.x,this.y,this.width,this.height)
+    this.ctx.drawImage(this.img,this.x,this.y,this.width,this.height,)
   }
 
   jump (){ 
-    this.speedY = -25
+    this.speedY = -20
   }
  }
