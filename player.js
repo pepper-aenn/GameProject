@@ -31,4 +31,22 @@ class Player {
   jump (){ 
     this.speedY = -20
   }
+  crashWith(otherObstacle){
+    var myleft= this.x;
+    var myright = this.x + (this.width);
+    var mytop = this.y;
+    var mybottom = this.y + this.height;
+    var otherleft = otherObstacle.x;
+    var otherRight = otherObstacle.x + (otherObstacle.width);
+    var otherTop = otherObstacle.y;
+    var otherBottom = otherObstacle.y + (otherleft.height);
+    var crash = true;
+    if ((mybottom < othertop) ||
+               (mytop > otherbottom) ||
+               (myright < otherleft) ||
+               (myleft > otherright)) {
+           crash = false;
+        }
+        return crash;
+      }
  }

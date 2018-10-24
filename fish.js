@@ -4,7 +4,7 @@ class Fish{
     this.img = new Image()
     this.img.src = url
     this.x = 1200
-    this.y =  250 
+    this.y =  300 
     this.speed = speed
   }
   update(){
