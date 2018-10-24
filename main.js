@@ -16,28 +16,27 @@ var interval = setInterval(function() {
   drawEverything();
 }, 1000 / 100);
 
-
 function update() {
-  if (penguin.crashWith(newObstacle)) {
-    interval.stop();
-} 
-else {
   bg.update();
   penguin.update();
   makrele.update();
   frame++;
   if (frame % 500 === 0) {
     console.log("Creating obstacle", frame);
-        newObstacles();
+    newObstacles();
   }
   for (var i = 0; i < newObstacle.length; i++) {
-  
     newObstacle[i].update();
   }
+  newObstacle.forEach(obstacle => {
+    if (newObstacle.length > 0 && penguin.crashWith(obstacle)) {
+      console.log("Crashed");
+      clearInterval(interval);
+    }
+  });
   newObstacle.filter(
     obstacle => (obstacle.x + obstacle.width < 0 ? false : true)
   );
-  }
 }
 
 function drawEverything() {
@@ -70,14 +69,9 @@ function newObstacles() {
   } else {
     y = 345;
   }
-   newObstacle.push(
+  newObstacle.push(
     new Obstacle(ctx, obstacle[iObstacle], 1, y, canvas.width + 1)
   );
-  
 }
 
-
-
 soundTrack.play();
-
-
