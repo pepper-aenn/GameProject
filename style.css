@@ -9,9 +9,8 @@ body {
 body {
   font-family: monospace;
   font-size: 14px;
-  background-image: url(/images/now-milkyway.jpg);
+  background-image: url(images/now-milkyway.jpg);
   color: rgb(226, 210, 32);
-  
 }
 #PreviousSkaters {
   background-color: rgba(0, 0, 0, 0.603);
@@ -48,14 +47,11 @@ canvas {
   flex-direction: row;
 }
 
-
 .Game {
   margin-top: 5%;
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
-  
-  
 }
 
 #Instructions {
@@ -73,7 +69,7 @@ canvas {
 
 #Instructions p {
   margin-top: 0;
-  }
+}
 
 #Story {
   background-color: rgba(0, 0, 0, 0.609);
@@ -85,7 +81,7 @@ canvas {
   /* flex-direction: row; */
   margin-left: 7.5%;
   margin-top: 3%;
-   justify-content: center;
+  justify-content: center;
 }
 
 #footer {
@@ -100,10 +96,10 @@ canvas {
   height: 10%;
 }
 
-#my-audio{
+#my-audio {
   display: flex;
   flex-direction: row;
-  }
+}
 
 #footer p {
   padding: 5px;

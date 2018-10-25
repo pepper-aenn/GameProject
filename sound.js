@@ -1,11 +1,9 @@
-var crash = new Audio("/sounds/crash.wav");
+var crash = new Audio("sounds/crash.wav");
 
-
-window.onload = function(){
-
-  var myAudio = document.getElementById('my-audio');
-  var play = document.getElementById('play');
-  var pause = document.getElementById('pause');
+window.onload = function() {
+  var myAudio = document.getElementById("my-audio");
+  var play = document.getElementById("play");
+  var pause = document.getElementById("pause");
 
   // associate functions with the 'onclick' events
   play.onclick = playAudio;
@@ -18,5 +16,4 @@ window.onload = function(){
   function pauseAudio() {
     myAudio.pause();
   }
-
-}
+};

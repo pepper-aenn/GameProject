@@ -4,16 +4,16 @@ var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
 var width = canvas.width;
 var height = canvas.height;
-var bg = new Background(ctx, "/images/city2.png", 0.5);
-var penguin = new Player(ctx, "/images/New Project.png", 1);
+var bg = new Background(ctx, "images/city2.png", 0.5);
+var penguin = new Player(ctx, "images/New Project.png", 1);
 var makreleSpawn = [];
-var obstacle = ["/images/bench.png", "/images/pigeon.png", "/images/trash.png"];
+var obstacle = ["images/bench.png", "images/pigeon.png", "images/trash.png"];
 var newObstacle = [];
 var frame = 0;
 var counter = 0;
 
 if (makreleSpawn.length < 0) {
-  var makrele = new Fish(ctx, "/images/Makrele_seefrost_1.png", 1);
+  var makrele = new Fish(ctx, "images/Makrele_seefrost_1.png", 1);
   makreleSpawn.push(makrele);
 }
 
@@ -23,7 +23,7 @@ var interval = setInterval(function() {
 }, 1000 / 100);
 
 function update() {
-   bg.update();
+  bg.update();
   penguin.update();
   // makrele.update();
   makreleSpawn.forEach(one => {
@@ -45,11 +45,10 @@ function update() {
     }
   });
   makreleSpawn.forEach(one => {
-   if (penguin.crashWith(makreleSpawn)){
-    counter += 1;
-    makreleSpawn.splice(one)
-    console.log("splice", makreleSpawn);
-
+    if (penguin.crashWith(makreleSpawn)) {
+      counter += 1;
+      makreleSpawn.splice(one);
+      console.log("splice", makreleSpawn);
     }
   });
   newObstacle.filter(
