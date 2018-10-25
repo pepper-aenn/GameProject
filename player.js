@@ -51,7 +51,20 @@ class Player {
     }
     return crash;
   }
+  // checkMakrele(fish) {
+  //   if (
+  //     this.x == fish.x &&
+  //     (this.x + this.width) == (fish.x + fish.width) &&
+  //     (this.y == fish.y) &&
+  //     (this.y + this.height) == fish.y + fish.height
+  //     ){
+  //     counter = counter + 1;
+  //     console.log("this", counter);
+  //     document.getElementById("overlay").innerHTML =
+  //      document.getElementById("Makrele") + " x " + counter;
+  //     // sound1.play();
+  //     console.log("YAY")
+  //     }
+  //     return false;
+  // }
 }
-
-
-

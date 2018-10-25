@@ -9,7 +9,7 @@ class Fish{
   }
   update(){
     this.x -= this.speed 
-    if (this.x < -20 - this.width){
+    if (this.x < -50 - this.width){
       this.x += canvas.width + this.width
     }
 

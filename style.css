@@ -1,59 +1,122 @@
-html, body {
+html,
+body {
   width: 100%;
   height: 75%;
   margin: 0;
   padding: 0;
 }
 
-
-
-
 body {
-  background-color: black;
-  color: rgb(245, 228, 47);
+  font-family: monospace;
+  font-size: 14px;
+  background-image: url(/images/now-milkyway.jpg);
+  color: rgb(226, 210, 32);
+  
 }
-
-canvas {
-  border: solid;
-}
-
-.block{
-  height: 40%;
+#PreviousSkaters {
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 20px;
+  height: 150px;
+  width: 250px;
+  border: solid 1px;
   display: flex;
+  margin-right: 15px;
+  margin-top: 500px;
+  margin-left: 0;
+  flex-direction: row;
+  justify-content: center;
+}
+canvas {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border: solid 1px;
+  background-color: black;
+  z-index: 1;
+  /* position: absolute; */
+  /* position: absolute; */
+}
+
+.block {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 10%;
+  margin-bottom: 50px;
+  display: flex;
+  margin-top: 50px;
   justify-content: center;
   flex-direction: row;
 }
+
 
 .Game {
+  margin-top: 5%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-}
-
-#Instructions {
-  padding: 20px;
-  height: 400px;
-  width: 300px;
-  border: solid;
-  display: flex;
-  margin-right: 25px;
-  flex-direction: row;
-  justify-content: center;
-}
-
-#Instructions p{
-  margin-top: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
-
-#keyboard {
+  /* justify-content: space-between; */
+  
   
 }
 
-#footer{
-display: flex;
-flex-direction: column;
-flex-direction: column-reverse;
-height: 30%;
+#Instructions {
+  background-color: rgba(0, 0, 0, 0.411);
+  padding: 20px;
+  height: 400px;
+  width: 300px;
+  border: solid 1px;
+  display: flex;
+  margin-right: 15px;
+  margin-top: 50px;
+  /* flex-direction: row; */
+  justify-content: center;
 }
 
+#Instructions p {
+  margin-top: 0;
+  }
+
+#Story {
+  background-color: rgba(0, 0, 0, 0.609);
+  border: solid 1px;
+  padding: 20px;
+  height: 500px;
+  width: 300px;
+  display: flex;
+  /* flex-direction: row; */
+  margin-left: 7.5%;
+  margin-top: 3%;
+   justify-content: center;
+}
+
+#footer {
+  background-color: rgba(0, 0, 0, 0.411);
+  border: solid 1px;
+  margin-top: 30px;
+  width: 700px;
+  display: flex;
+  margin-left: 230px;
+  flex-direction: row;
+  align-items: center;
+  height: 10%;
+}
+
+#my-audio{
+  display: flex;
+  flex-direction: row;
+  }
+
+#footer p {
+  padding: 5px;
+}
+
+/* #overlay {
+  width: 800px;
+  height: 1000px;
+  margin-top: 20px;
+  height: 70px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */

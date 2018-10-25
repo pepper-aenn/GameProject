@@ -1,2 +1,22 @@
-var soundTrack = new Audio("/sounds/extrawelt.mp3");
-soundTrack.loop = true;
+var crash = new Audio("/sounds/crash.wav");
+
+
+window.onload = function(){
+
+  var myAudio = document.getElementById('my-audio');
+  var play = document.getElementById('play');
+  var pause = document.getElementById('pause');
+
+  // associate functions with the 'onclick' events
+  play.onclick = playAudio;
+  pause.onclick = pauseAudio;
+
+  function playAudio() {
+    myAudio.play();
+  }
+
+  function pauseAudio() {
+    myAudio.pause();
+  }
+
+}

@@ -12,11 +12,14 @@
   <div class= "block">
     
   
-  <p>Skater Penguins Super Sonic Space Adventure</p>
-  
+  <img src="https://fontmeme.com/permalink/181025/8e778bb1143b5fe6bd15011c608511e0.png">
 
   </div>
   <div class= "Game">
+    <div id="PreviousSkaters">
+      <p>Penguins who managed to escape Planet Earth:</p>
+    </div>
+   
     <div id="Instructions">
       <p>Instructions <br><br><br>
       1) Don't die. <br>
@@ -27,16 +30,31 @@
       <img src="/images/Makrele_seefrost_1.png"><br><br>
       4)Have fun.</p>
     </div>
-    <canvas width="1000" height="600"></canvas>
+
+      <canvas width="1000" height="600"></canvas>
+      
+      <div id= "overlay">
+      <!-- <img id="Makrele" src="/images/Makrele_seefrost_1.png" height="20"> 
+      <img id="Penguin" src="/images/littlepen2.png">  -->
+      </div>
+
     <div id="Story"> 
       <p>
-        No more humans, no more trash!
-        The little penguin is sick of life on planet earth, and after watching a documentary on Proxima Centauri B, the first planet
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <!-- No more humans, no more trash!
+        The little penguin is sick of life on planet earth, and after watching a documentary on Proxima Centauri B, the first planet -->
       </p>
     </div>
   </div>
   <div class= "block" id="footer">
-      <audio src="/sounds/extrawelt.mp3" controls>
+    <p>MUSIC?</p>
+    <audio id="my-audio">
+        <source src="/sounds/extrawelt.mp3" type="audio/mp3">      
+      </audio>
+      
+      <!-- custom play and pause buttons -->
+      <button id="play">yes, please.</button>
+      <button id="pause">no, stop it.</button>
   
   </div>
   <script src="sound.js"></script>
