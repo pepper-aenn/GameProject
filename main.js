@@ -68,12 +68,12 @@ function drawEverything() {
   for (var i = 0; i < newObstacle.length; i++) {
     newObstacle[i].draw();
   }
-  // drawCounter(){
-  //   console.log("count")
-  // ctx.drawImage("images/New Project.png", 50,50);
-  // ctx.font = "14px monospace";
-  // ctx.fillText("x " + counter,100,50);
-  // }
+  function counterDraw() {
+    console.log("count")
+  ctx.drawImage("images/New Project.png", 100,100);
+  ctx.font = "14px monospace";
+  ctx.fillText("x " + counter,100,50);
+  }
 }
 
 document.onkeydown = function(e) {
