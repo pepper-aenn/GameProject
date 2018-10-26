@@ -32,10 +32,10 @@ class Player {
     this.speedY = -20;
   }
   crashWith(otherObstacle) {
-    var myleft = this.x + 20;
+    var myleft = this.x ;
     var myright = this.x + this.width;
     var mytop = this.y;
-    var mybottom = this.y + (this.height - 30);
+    var mybottom = this.y + (this.height);
     var otherLeft = otherObstacle.x;
     var otherRight = otherObstacle.x + otherObstacle.width;
     var otherTop = otherObstacle.y;

@@ -8,7 +8,7 @@ var bg = new Background(ctx, "images/city2.png", 0.5);
 var penguin = new Player(ctx, "images/New Project.png", 1);
 var makreleSpawn = [];
 var imgMakrele = new Image();
-imgMakrele.src = "images/Makrele_seefrost_1.png";
+imgMakrele.src = "images/Makrele_small.png";
 var obstacle = ["images/bench.png", "images/pigeon.png", "images/trash.png"];
 var newObstacle = [];
 var frame = 0;
@@ -21,7 +21,7 @@ var interval = setInterval(function() {
   update();
   drawEverything();
   console.log("INTERVAL");
-}, 1000 / 100);
+}, 1000 / 120);
 
 function update() {
   bg.update();
@@ -79,14 +79,14 @@ function drawEverything() {
     newObstacle[i].draw();
   }
   function counterDraw() {
-    ctx.drawImage(imgMakrele, 10, 20);
+    ctx.drawImage(imgMakrele, 20, 28);
     ctx.font = "15px monospace";
-    ctx.fillText("x " + counter, 180, 45);
+    ctx.fillText("x " + counter, 130, 45);
   }
   function livesDraw() {
-    ctx.drawImage(imgLives, 910, 10);
+    ctx.drawImage(imgLives, 930, 15);
     ctx.font = "15px monospace";
-    ctx.fillText(counterLives + " x", 870, 45);
+    ctx.fillText(counterLives + " x", 890, 45);
   }
 }
 
@@ -104,7 +104,7 @@ function newObstacles() {
   console.log("obstacle[iObstacle]", obstacle[iObstacle]);
   var y;
   if (iObstacle === 0) {
-    y = 340;
+    y = 400;
   } else if (iObstacle === 1) {
     y = 100;
   } else {
