@@ -7,6 +7,8 @@ var height = canvas.height;
 var bg = new Background(ctx, "images/city2.png", 0.5);
 var penguin = new Player(ctx, "images/New Project.png", 1);
 var makreleSpawn = [];
+var imgMakrele= new Image();
+imgMakrele.src="images/Makrele_seefrost_1.png"    
 var obstacle = ["images/bench.png", "images/pigeon.png", "images/trash.png"];
 var newObstacle = [];
 var frame = 0;
@@ -15,6 +17,7 @@ var counter = 0;
 var interval = setInterval(function() {
   update();
   drawEverything();
+  
 }, 1000 / 100);
 
 function update() {
@@ -24,14 +27,12 @@ function update() {
     makreleSpawn.push(new Fish(ctx, "images/Makrele_seefrost_1.png", 1));
   }
 
-  // makrele.update();
-  makreleSpawn.forEach(one => {
+   makreleSpawn.forEach(one => {
     one.update();
   });
   frame++;
   if (frame % 500 === 0) {
-    console.log("Creating obstacle", frame);
-    newObstacles();
+     newObstacles();
   }
   for (var i = 0; i < newObstacle.length; i++) {
     newObstacle[i].update();
@@ -41,12 +42,11 @@ function update() {
       console.log("Crashed");
       crash.play();
       clearInterval(interval);
+
     }
   });
   makreleSpawn.forEach((one, i) => {
     if (penguin.crashWith(one)) {
-      console.log("nam!");
-
       collect.play();
       counter += 1;
       makreleSpawn.splice(i, 1);
@@ -61,6 +61,7 @@ function update() {
 function drawEverything() {
   ctx.clearRect(0, 0, width, height);
   bg.draw();
+  counterDraw();
   penguin.draw();
   makreleSpawn.forEach(makrele => {
   makrele.draw();
@@ -70,9 +71,9 @@ function drawEverything() {
   }
   function counterDraw() {
     console.log("count")
-  ctx.drawImage("images/New Project.png", 100,100);
-  ctx.font = "14px monospace";
-  ctx.fillText("x " + counter,100,50);
+  ctx.drawImage(imgMakrele,10,20);
+  ctx.font = "15px monospace";
+  ctx.fillText("x " + counter,180,45);
   }
 }
 
@@ -101,4 +102,29 @@ function newObstacles() {
   );
 }
 
-// soundTrack.play();
+function getHighScores() {
+  var highScores = JSON.parse(localStorage.getItem('highScores'))
+  if (!Array.isArray(highScores)) {
+    highScores = []
+  }
+  return highScores
+}
+function saveHighScore(score,name) {
+  var highScores = getHighScores()
+  highScores.push({score:score, name:name})
+  highScores.sort(function(a,b){
+    return b.score - a.score
+  })
+  localStorage.setItem('highScores', JSON.stringify(highScores))
+}
+
+function renderHighScores() {
+  var innerHTML = '<ul>'
+  var highScores = getHighScores()
+  for (var i = 0; i < highScores.length; i++) {
+    innerHTML += '<li>'+highScores[i].score+' ('+highScores[i].name+')</li>'
+  }
+  innerHTML += '</ul>'
+  document.getElementById('PreviousSkaters').innerHTML = innerHTML
+}
+
