@@ -7,17 +7,20 @@ var height = canvas.height;
 var bg = new Background(ctx, "images/city2.png", 0.5);
 var penguin = new Player(ctx, "images/New Project.png", 1);
 var makreleSpawn = [];
-var imgMakrele= new Image();
-imgMakrele.src="images/Makrele_seefrost_1.png"    
+var imgMakrele = new Image();
+imgMakrele.src = "images/Makrele_seefrost_1.png";
 var obstacle = ["images/bench.png", "images/pigeon.png", "images/trash.png"];
 var newObstacle = [];
 var frame = 0;
 var counter = 0;
+var counterLives = 3;
+var imgLives = new Image();
+imgLives.src = "images/littlepen2.png";
 
 var interval = setInterval(function() {
   update();
   drawEverything();
-  
+  console.log("INTERVAL");
 }, 1000 / 100);
 
 function update() {
@@ -27,12 +30,12 @@ function update() {
     makreleSpawn.push(new Fish(ctx, "images/Makrele_seefrost_1.png", 1));
   }
 
-   makreleSpawn.forEach(one => {
+  makreleSpawn.forEach(one => {
     one.update();
   });
   frame++;
   if (frame % 500 === 0) {
-     newObstacles();
+    newObstacles();
   }
   for (var i = 0; i < newObstacle.length; i++) {
     newObstacle[i].update();
@@ -41,8 +44,13 @@ function update() {
     if (newObstacle.length > 0 && penguin.crashWith(obstacle)) {
       console.log("Crashed");
       crash.play();
+      counterLives -= 1;
+      if (counterLives == 0) {
+        alert("Journey abort! You didn't make it!");
+      } else if (counterLives > 0) {
+        console.log("lives", interval);
+      }
       clearInterval(interval);
-
     }
   });
   makreleSpawn.forEach((one, i) => {
@@ -62,18 +70,23 @@ function drawEverything() {
   ctx.clearRect(0, 0, width, height);
   bg.draw();
   counterDraw();
+  livesDraw();
   penguin.draw();
   makreleSpawn.forEach(makrele => {
-  makrele.draw();
+    makrele.draw();
   });
   for (var i = 0; i < newObstacle.length; i++) {
     newObstacle[i].draw();
   }
   function counterDraw() {
-    console.log("count")
-  ctx.drawImage(imgMakrele,10,20);
-  ctx.font = "15px monospace";
-  ctx.fillText("x " + counter,180,45);
+    ctx.drawImage(imgMakrele, 10, 20);
+    ctx.font = "15px monospace";
+    ctx.fillText("x " + counter, 180, 45);
+  }
+  function livesDraw() {
+    ctx.drawImage(imgLives, 910, 10);
+    ctx.font = "15px monospace";
+    ctx.fillText(counterLives + " x", 870, 45);
   }
 }
 
@@ -103,28 +116,28 @@ function newObstacles() {
 }
 
 function getHighScores() {
-  var highScores = JSON.parse(localStorage.getItem('highScores'))
+  var highScores = JSON.parse(localStorage.getItem("highScores"));
   if (!Array.isArray(highScores)) {
-    highScores = []
+    highScores = [];
   }
-  return highScores
+  return highScores;
 }
-function saveHighScore(score,name) {
-  var highScores = getHighScores()
-  highScores.push({score:score, name:name})
-  highScores.sort(function(a,b){
-    return b.score - a.score
-  })
-  localStorage.setItem('highScores', JSON.stringify(highScores))
+function saveHighScore(score, name) {
+  var highScores = getHighScores();
+  highScores.push({ score: score, name: name });
+  highScores.sort(function(a, b) {
+    return b.score - a.score;
+  });
+  localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
 function renderHighScores() {
-  var innerHTML = '<ul>'
-  var highScores = getHighScores()
+  var innerHTML = "<ul>";
+  var highScores = getHighScores();
   for (var i = 0; i < highScores.length; i++) {
-    innerHTML += '<li>'+highScores[i].score+' ('+highScores[i].name+')</li>'
+    innerHTML +=
+      "<li>" + highScores[i].score + " (" + highScores[i].name + ")</li>";
   }
-  innerHTML += '</ul>'
-  document.getElementById('PreviousSkaters').innerHTML = innerHTML
+  innerHTML += "</ul>";
+  document.getElementById("PreviousSkaters").innerHTML = innerHTML;
 }
-
