@@ -6,9 +6,9 @@ class Player {
     this.img = new Image();
     this.img.src = url;
     this.x = 30;
-    this.y = 100;
-    this.height = 139;
-    this.width = 115;
+    this.y = 50;
+    this.height = this.img.height;
+    this.width = this.img.width;
     this.gravity = 1;
     this.speedY = 0;
     this.minY = ctx.canvas.height - this.height - 88;
@@ -32,10 +32,10 @@ class Player {
     this.speedY = -20;
   }
   crashWith(otherObstacle) {
-    var myleft = this.x;
+    var myleft = this.x + 20;
     var myright = this.x + this.width;
     var mytop = this.y;
-    var mybottom = this.y + this.height;
+    var mybottom = this.y + (this.height - 30);
     var otherLeft = otherObstacle.x;
     var otherRight = otherObstacle.x + otherObstacle.width;
     var otherTop = otherObstacle.y;

@@ -7,8 +7,8 @@ class Obstacle {
     this.img.src = url;
     this.x = x;
     this.y = y;
-    this.height = 139;
-    this.width = 100;
+    this.height = this.img.height;
+    this.width = this.img.width;
     this.speed = speed;
   }
   update() {
@@ -16,7 +16,7 @@ class Obstacle {
 
   }
   draw() {
-    this.ctx.drawImage(this.img, this.x, this.y);
+    this.ctx.drawImage(this.img, this.x, this.y,this.width,this.height);
   }
   
 }
