@@ -1,4 +1,5 @@
 var crash = new Audio("sounds/crash.wav");
+var collect = new Audio("sounds/collect.wav")
 
 window.onload = function() {
   var myAudio = document.getElementById("my-audio");

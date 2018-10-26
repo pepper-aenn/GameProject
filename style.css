@@ -1,7 +1,7 @@
 html,
 body {
   width: 100%;
-  height: 75%;
+  height: 42%;
   margin: 0;
   padding: 0;
 }
@@ -14,13 +14,14 @@ body {
 }
 #PreviousSkaters {
   background-color: rgba(0, 0, 0, 0.603);
+  text-align: justify;
   padding: 20px;
-  height: 150px;
-  width: 250px;
+  height: 485px;
+  width: 75px;
   border: solid 1px;
   display: flex;
   margin-right: 15px;
-  margin-top: 500px;
+  margin-top: 200px;
   margin-left: 15px;
   flex-direction: row;
   justify-content: center;
@@ -39,7 +40,7 @@ canvas {
 
 .block {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 10%;
+  height: 19%;
   margin-bottom: 50px;
   display: flex;
   margin-top: 100px;
@@ -49,6 +50,7 @@ canvas {
 
 .Game {
   margin-top: 5%;
+  height: 600px;
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
@@ -57,12 +59,12 @@ canvas {
 #Instructions {
   background-color: rgba(0, 0, 0, 0.411);
   padding: 20px;
-  height: 400px;
-  width: 300px;
+  height: 370px;
+  width: 270px;
   border: solid 1px;
   display: flex;
   margin-right: 15px;
-  margin-top: 50px;
+  margin-top: 40px;
   /* flex-direction: row; */
   justify-content: center;
 }
@@ -72,17 +74,20 @@ canvas {
 }
 
 #Story {
-  background-color: rgba(0, 0, 0, 0.609);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.637);
   border: solid 1px;
   padding: 20px;
   height: 500px;
   width: 300px;
   display: flex;
-  /* flex-direction: row; */
   margin-left: 7.5%;
-  margin-top: 3%;
+  margin-top: 1.5%;
+  margin-right: 5%;
   justify-content: center;
 }
+
+
 
 #footer {
   background-color: rgba(0, 0, 0, 0.411);
@@ -93,7 +98,7 @@ canvas {
   margin-left: 230px;
   flex-direction: row;
   align-items: center;
-  height: 10%;
+  height: 30%;
 }
 
 #my-audio {
